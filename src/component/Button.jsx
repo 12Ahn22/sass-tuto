@@ -5,12 +5,16 @@ import './Button.scss';
 import classNames from 'classnames';
 
 // size : large, medium, small
-const Button = ({ children, size }) => {
-	return <button className={classNames('button', size)}>{children}</button>;
+// color : blue, pink, gray
+const Button = ({ children, size, color }) => {
+	return (
+		<button className={classNames('button', size, color)}>{children}</button>
+	);
 };
 
 // 디폴트 props
 Button.defaultProps = {
 	size: 'medium',
+	color: 'blue',
 };
 export default Button;

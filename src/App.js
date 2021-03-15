@@ -4,8 +4,12 @@ function App() {
 	return (
 		<div className="App">
 			<div className="buttons">
-				<Button size="large">Button</Button>
-				<Button size="small">Button</Button>
+				<Button size="large" color="pink">
+					Button
+				</Button>
+				<Button size="small" color="gray">
+					Button
+				</Button>
 				<Button>Button</Button>
 			</div>
 		</div>

@@ -1,5 +1,18 @@
 // 변수 선언은 $
 $blue: #228be6;
+$gray: #495057;
+$pink: #f06595;
+
+// 반복되는 코드는 @mixin 으로 관리한다
+@mixin button-color($color) {
+	background: $color;
+	&:hover {
+		background: lighten($color, 10%);
+	}
+	&:active {
+		background: darken($color, 10%);
+	}
+}
 
 .button {
 	display: inline-flex;
@@ -29,13 +42,19 @@ $blue: #228be6;
 		font-size: 0.875rem;
 	}
 
-	background: $blue;
-	&:hover {
-		background: lighten($blue, 10%);
+	// 색상에 따른 scss
+	// 반복되는 코드는 mixin으로 관리
+	// mixin을 사용할 때는 @include mixin이름(파라미터)
+	&.blue {
+		@include button-color($blue);
 	}
-	&:active {
-		background: darken($blue, 10%);
+	&.gray {
+		@include button-color($gray);
 	}
+	&.pink {
+		@include button-color($pink);
+	}
+
 	// 자신 옆에 자신에게 margin left를 준다.
 	& + & {
 		margin-left: 1rem;
