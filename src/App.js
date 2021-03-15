@@ -11,6 +11,10 @@ function App() {
 					Button
 				</Button>
 				<Button>Button</Button>
+				<Button outline>Button</Button>
+				<Button outline fullWidth>
+					Button
+				</Button>
 			</div>
 		</div>
 	);

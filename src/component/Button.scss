@@ -12,6 +12,15 @@ $pink: #f06595;
 	&:active {
 		background: darken($color, 10%);
 	}
+	&.outline {
+		color: $color;
+		background: none;
+		border: 1px solid $color;
+		&:hover {
+			background-color: $color;
+			color: #fff;
+		}
+	}
 }
 
 .button {
@@ -55,8 +64,18 @@ $pink: #f06595;
 		@include button-color($pink);
 	}
 
+	//
 	// 자신 옆에 자신에게 margin left를 준다.
 	& + & {
 		margin-left: 1rem;
+	}
+
+	&.fullWidth {
+		width: 100%;
+		justify-content: center;
+		margin-top: 1rem;
+		&:last-child {
+			margin-left: 0;
+		}
 	}
 }
