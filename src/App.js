@@ -15,6 +15,20 @@ function App() {
 				<Button outline fullWidth>
 					Button
 				</Button>
+
+				<Button
+					color="pink"
+					fullWidth
+					onClick={() => {
+						console.log('click');
+					}}
+					onMouseMove={() => {
+						console.log('마우스 무브');
+					}}
+					className="customized-btn"
+				>
+					Button
+				</Button>
 			</div>
 		</div>
 	);
