@@ -1,0 +1,43 @@
+// 변수 선언은 $
+$blue: #228be6;
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 600;
+	outline: none;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+
+	padding-left: 1rem;
+	padding-right: 1rem;
+	// &는 자기 자신을 가르킨다.
+	// 자기자신.클래스 상황에 맞는 css를 내부에서 설정이 가능하다
+	&.medium {
+		height: 2.25rem;
+		font-size: 1rem;
+	}
+	&.large {
+		height: 3rem;
+		font-size: 1rem;
+	}
+	&.small {
+		height: 1.75rem;
+		font-size: 0.875rem;
+	}
+
+	background: $blue;
+	&:hover {
+		background: lighten($blue, 10%);
+	}
+	&:active {
+		background: darken($blue, 10%);
+	}
+	// 자신 옆에 자신에게 margin left를 준다.
+	& + & {
+		margin-left: 1rem;
+	}
+}
